@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        #lottie-container {
+            width: 415.778076171875px;
+            height: 140.5799560546875px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <dotlottie-player src="./aml-component-animation.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" playMode="normal" loop controls autoplay></dotlottie-player> -->
+
+    <div id="lottie-container">
+
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+                let animation = lottie.loadAnimation({
+                    container: document.getElementById('lottie-container'),
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    path: './aml-component-animation.json' // Path to your animation file
+                });
+
+                animation.addEventListener('complete', function () {
+                    // document.getElementById('projects_page').classList.add("animation_done");
+                    // localStorage.setItem("lottiePlayed", "true"); // Mark as played
+                });
+        });
+    </script>
+</body>
+</html>
