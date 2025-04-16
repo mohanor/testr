@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,44 +14,34 @@
             align-items: center;
             width: 100%;
         }
-        #lottie-container {
-            width: 415.778076171875px;
-            height: 140.5799560546875px;
-        }
-
     </style>
 </head>
+
 <body>
-    
-    <!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <dotlottie-player src="./aml-component-animation.json" background="transparent" speed="1" style="width: 300px; height: 300px" direction="1" playMode="normal" loop controls autoplay></dotlottie-player> -->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <dotlottie-player
+        id="myLottie"
+        src="https://lottie.host/7ead2cb6-58c1-408f-90b4-72509a6715f3/XTXK508Hi2.json"
+        background="transparent"
+        speed="0.5"
+        style="width: 600px; height: 600px"
+        direction="1"
+        playMode="normal"
+    ></dotlottie-player>
 
-    <div id="lottie-container">
-
-    </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = document.getElementById('myLottie');
 
-            
-                let animation = lottie.loadAnimation({
-                    container: document.getElementById('lottie-container'),
-                    renderer: 'svg',
-                    loop: false,
-                    autoplay: true,
-                    path: './aml-component-animation.json' // Path to your animation file
-                });
-
-                animation.addEventListener('complete', function () {
-                    // document.getElementById('projects_page').classList.add("animation_done");
-                    // localStorage.setItem("lottiePlayed", "true"); // Mark as played
-                });
-        
-
-
-
-                
+            player.addEventListener('ready', () => {
+                player.pause();                
+                setTimeout(() => {
+                    player.play();
+                }, 1000);
+            });
         });
     </script>
+
 </body>
+
 </html>
